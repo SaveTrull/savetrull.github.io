@@ -39,6 +39,10 @@
             <div class="mx-auto">Save Trull's</div>
             <div>Green Wedge</div>
         </h1>
+        <div class="alert alert-primary" role="alert">
+            <div>Time left to <a href="https://www3.somersetwestandtaunton.gov.uk/asp/webpages/plan/PlAppDets.asp?casefullref=42/24/0030&QC=3pcC1">submit your comments to planning portal</a>: <span id="countdown-timer" style="font-weight: bold"></span></div>
+            <div class="text-end fst-italic pt-3">Public on-line consultation ends: 25/10/2024</div>
+        </div>
         <p>It has been proposed that a field within Trull, that is green wedge land is going to have 125+ houses built
             on it. This is in addition to the development of 2000 houses being built between Trull and Rumwell, and so
             there is great concern that this development within the village will put even greater strain on Trull
@@ -126,9 +130,9 @@
                     href="https://www.facebook.com/groups/518755842370470?locale=en_GB">Community Group</a>... anything
                 to help make people aware.</p>
         </div>
-      <div class="mb-5">
-        <p>Thanks for your help</p>
-      </div>
+        <div class="mb-5">
+            <p>Thanks for your help</p>
+        </div>
     </div>
 </div>
 
@@ -141,5 +145,35 @@
 <script async src="https://scripts.simpleanalyticscdn.com/auto-events.js"></script>
 <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt=""
                referrerpolicy="no-referrer-when-downgrade"/></noscript>
+
+<!-- Countdown Timer Script -->
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Oct 25, 2024 23:59:59").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        // Display the result in the element with id="countdown-timer"
+        document.getElementById("countdown-timer").innerHTML = days + (days <= 1 ? " day" : " days");
+
+        // If the countdown is over, display a message
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown-timer").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>
